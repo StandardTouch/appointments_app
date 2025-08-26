@@ -72,6 +72,7 @@ def send_absent_after_shift_sms():
         limit_page_length=0,
     )
 
+
     for q in queues:
         shift = frappe.db.get_value(
             "Schedule Shift", q.shift, ["start_time", "end_time", "title"], as_dict=True

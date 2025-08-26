@@ -47,13 +47,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "doctor",
-   "fieldtype": "Link",
-   "label": "Doctor",
-   "options": "Doctor",
-   "reqd": 1
-  },
-  {
    "default": "0",
    "fieldname": "doctor_in",
    "fieldtype": "Check",
@@ -64,6 +57,12 @@
    "fieldtype": "Attach Image",
    "hidden": 1,
    "label": "Clinic Image"
+  },
+  {
+   "fieldname": "doctor",
+   "fieldtype": "Link",
+   "label": "Doctor",
+   "options": "Doctor"
   }
  ],
  "has_web_view": 1,
@@ -76,7 +75,7 @@
    "link_fieldname": "clinic"
   }
  ],
- "modified": "2023-08-02 23:20:26.105887",
+ "modified": "2025-08-05 12:48:57.814660",
  "modified_by": "Administrator",
  "module": "Appointments App",
  "name": "Clinic",
@@ -97,6 +96,7 @@
   }
  ],
  "route": "clinics",
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

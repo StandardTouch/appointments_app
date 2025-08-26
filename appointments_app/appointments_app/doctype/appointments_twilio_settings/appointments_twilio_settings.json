@@ -21,6 +21,7 @@
   {
    "fieldname": "auth_token",
    "fieldtype": "Password",
+   "in_list_view": 1,
    "label": "Auth Token"
   },
   {
@@ -36,7 +37,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-07-18 10:06:52.345609",
+ "modified": "2025-07-11 13:06:17.920832",
  "modified_by": "Administrator",
  "module": "Appointments App",
  "name": "Appointments Twilio Settings",
@@ -53,6 +54,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

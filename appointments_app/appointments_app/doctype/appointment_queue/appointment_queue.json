@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "format:AQ-{####}",
  "creation": "2023-07-12 16:24:46.262358",
  "default_view": "List",
  "doctype": "DocType",
@@ -10,7 +10,19 @@
   "date",
   "clinic",
   "shift",
-  "queue"
+  "doctor",
+  "end_time",
+  "absent_sms_sent",
+  "column_break_qlub",
+  "patient_name",
+  "status",
+  "queue_number",
+  "amended_from",
+  "booked_date",
+  "reminder_date",
+  "send_to_hr",
+  "attach_image",
+  "image_field"
  ],
  "fields": [
   {
@@ -32,23 +44,107 @@
    "fieldname": "shift",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Shift",
    "options": "Schedule Shift",
    "reqd": 1
   },
   {
-   "fieldname": "queue",
-   "fieldtype": "Table",
-   "label": "Queue",
-   "options": "Appointment Queue Item"
+   "fieldname": "doctor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Doctor",
+   "options": "Doctor"
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pending\nAbsent\nOngoing\nCompleted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "queue_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Queue Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qlub",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Appointment Queue",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "booked_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Booked Date"
+  },
+  {
+   "fieldname": "reminder_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Reminder Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "shift.end_time",
+   "fieldname": "end_time",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "End Time",
+   "options": "Schedule Shift"
+  },
+  {
+   "default": "0",
+   "fieldname": "absent_sms_sent",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Absent sms Sent"
+  },
+  {
+   "default": "0",
+   "fieldname": "send_to_hr",
+   "fieldtype": "Check",
+   "label": "send to hr"
+  },
+  {
+   "fieldname": "attach_image",
+   "fieldtype": "Attach Image",
+   "label": "Attach image"
+  },
+  {
+   "fieldname": "image_field",
+   "fieldtype": "Image",
+   "label": "Image field"
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2023-07-12 16:26:26.257415",
+ "modified": "2025-08-20 11:14:26.801058",
  "modified_by": "Administrator",
  "module": "Appointments App",
  "name": "Appointment Queue",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -64,6 +160,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

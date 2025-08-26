@@ -49,7 +49,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-07-18 09:09:22.390470",
+ "modified": "2025-07-11 13:06:40.608985",
  "modified_by": "Administrator",
  "module": "Appointments App",
  "name": "Appointments SMS Log",
@@ -68,6 +68,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

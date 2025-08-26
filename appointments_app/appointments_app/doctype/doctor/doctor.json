@@ -12,7 +12,8 @@
   "qualifications",
   "column_break_uhig",
   "last_name",
-  "speciality"
+  "speciality",
+  "clinic"
  ],
  "fields": [
   {
@@ -49,11 +50,17 @@
   {
    "fieldname": "column_break_uhig",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "clinic",
+   "fieldtype": "Link",
+   "label": "Clinic",
+   "options": "Clinic"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-07-12 15:45:57.246411",
+ "modified": "2025-07-31 12:30:23.057716",
  "modified_by": "Administrator",
  "module": "Appointments App",
  "name": "Doctor",
@@ -73,6 +80,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

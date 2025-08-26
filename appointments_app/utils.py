@@ -12,9 +12,9 @@ def get_twilio_client():
 
     return Client(account_sid, auth_token)
 
-# From -> "+18149047351"
+# From -> "+13252306534"
 
-def send_message(body, from_, to):
+def send_message(body, from_, to,):
     client = get_twilio_client()
     message = client.messages.create(
         body=body,
@@ -24,11 +24,12 @@ def send_message(body, from_, to):
 
     try:
         frappe.get_doc({
-            "doctype": "Appointments SMS Log",
+            "doctype": "Appointments SMS Log", 
             "twilio_sid": message.sid,
             "body": body,
             "to_": to,
             "from_": from_,
+
         }).insert(ignore_permissions=True)
     except Exception:
         frappe.log_error("Appointments SMS Log Creation Failed")

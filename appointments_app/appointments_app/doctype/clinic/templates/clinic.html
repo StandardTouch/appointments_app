@@ -16,7 +16,7 @@
 
 <p><strong>Timings</strong></p>
 
-{% set shifts = frappe.get_list("Schedule Shift", filters={"clinic": doc.name}, fields=["title"]) %}
+{% set shifts = frappe.get_list("Schedule Shift",  fields=["title"]) %}
 
 <ul>
     {% for shift in shifts %}
@@ -31,7 +31,7 @@
 <script>
     frappe.ready(() => {
         frappe.realtime.on("doctor_status_changed", (data) => {
-            if (data.clinic == "Kale Nursing Home") {
+            if (data.clinic == currentClinic) {
                 if (data.updated_status == "IN") {
                     $("#status-badge").removeClass("badge-secondary").addClass("badge-success").text("IN")
                 } else {
@@ -43,4 +43,3 @@
 </script>
 {% endblock %}
 
-<!-- this is a sample default web page template -->

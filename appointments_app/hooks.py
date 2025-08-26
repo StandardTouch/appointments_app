@@ -1,8 +1,8 @@
 app_name = "appointments_app"
 app_title = "Appointments App"
-app_publisher = "Build With Hussain"
+app_publisher = "Ameer"
 app_description = "Appointment Web Portal"
-app_email = "hussain@frappe.io"
+app_email = "ameer@standardtouch.com"
 app_license = "AGPL 3.0"
 
 
@@ -130,14 +130,20 @@ after_install = "appointments_app.install.after_install"
 # 		"on_trash": "method"
 # 	}
 # }
-
 # Scheduled Tasks
 # ---------------
 
+
 scheduler_events = {
-	"daily": [
-		"appointments_app.appointments_app.doctype.appointment_queue.appointment_queue.create_queues_for_today"
-	]
+    "daily": [
+        "appointments_app.appointments_app.doctype.appointment_queue.appointment_queue_reminder.send_appointment_queue_reminders",
+        "appointments_app.appointments_app.doctype.appointment_queue.appointment_queue_reminder.send_absent_after_shift_sms_at_3pm"
+    ],
+    "cron": {
+        "* 9 * * *": [
+            "appointments_app.appointments_app.doctype.appointment_queue.appointment_queue_reminder.send_absent_after_shift_sms"
+        ],
+    }
 }
 
 # Testing

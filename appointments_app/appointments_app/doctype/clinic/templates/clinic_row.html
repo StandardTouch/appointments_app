@@ -7,7 +7,14 @@
 				<div class="col-md-8">
 					<div class="card-body">
 						<h5 class="card-title">{{ doc.get_title() }}</h5>
-						<p class="card-text">Dr.Manish Kale, Pediatrician</p>
+						 <p class="card-text">
+							{% if doc.doctor %}
+								{{ frappe.db.get_value('Doctor', doc.doctor, 'first_name') }} {{ frappe.db.get_value('Doctor', doc.doctor, 'last_name') }}
+							{% else %}
+								No doctor assigned
+							{% endif %}
+						</p>
+
 						<p class="card-text"><small class="text-muted">{{ doc.address }}</small></p>
 					</div>
 				</div>

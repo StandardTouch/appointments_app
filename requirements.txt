@@ -1,2 +1,1 @@
-# frappe -- https://github.com/frappe/frappe is installed via 'bench init'
-twilio==8.5.0
+twilio==9.7.0
